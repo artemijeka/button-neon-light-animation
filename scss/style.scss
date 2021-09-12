@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+  background-color: #050801;
+}
+
+.button-neon-light-animation {
+  display: inline-block;
+  padding: 25px 30px;
+  background-color: transparent;
+  color: #03e9f4;
+  font-size: 24px;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: 500ms;
+  letter-spacing: 4px;
+  border: none;
+  cursor: pointer;
+  -webkit-box-reflect: below -4px linear-gradient(transparent, #0002);
+
+  position: relative;
+  &:not(:first-child) {
+    margin-top: 140px;
+  }
+  &:hover {
+    background-color: #03e9f4;
+    color: #050801;
+    box-shadow: 0 0 5px #03e9f4, 0 0 20px #03e9f4, 0 0 40px #03e9f4, 0 0 80px #03e9f4;
+  }
+  &:nth-child(3){
+    filter: hue-rotate(290deg);
+  }
+  &:nth-child(1){
+    filter: hue-rotate(110deg);
+  }
+  &:nth-child(3){
+    // filter: hue-rotate(270deg);
+  }
+  span {
+    display: block;
+
+    position: absolute;
+    &:nth-child(1) {
+      left: -100%;
+      top: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #03e9f4);
+      animation: comet-1 2s linear infinite;
+    }
+    &:nth-child(2) {
+      right: 0;
+      top: -100%;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, transparent, #03e9f4);
+      animation: comet-2 2s linear infinite;
+      animation-delay: 500ms;
+    }
+    &:nth-child(3) {
+      right: -100%;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(360deg, transparent, #03e9f4);
+      animation: comet-3 2s linear infinite;
+      animation-delay: 1000ms;
+    }
+    &:nth-child(4) {
+      left: 0;
+      bottom: -100%;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(-90deg, transparent, #03e9f4);
+      animation: comet-4 2s linear infinite;
+      animation-delay: 1500ms;
+    }
+  }
+}
+
+@keyframes comet-1 {
+  0% {
+    left: -100%;
+  }
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+@keyframes comet-2 {
+  0% {
+    top: -100%;
+  }
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes comet-3 {
+  0% {
+    right: -100%;
+  }
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+@keyframes comet-4 {
+  0% {
+    bottom: -100%;
+  }
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
